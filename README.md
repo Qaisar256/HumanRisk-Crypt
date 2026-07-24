@@ -2,7 +2,7 @@
 
 HumanRisk-Crypt is a reproducibility-oriented framework for privacy-preserving phishing detection and human vulnerability risk analysis. It combines local feature extraction, a BFV-compatible polynomial classifier, real homomorphic inference through TenSEAL and Microsoft SEAL, ATT&CK-aligned ontology reasoning, and expert-calibrated E-HVSS scoring.
 
-This repository distinguishes genuine encrypted experiments from software-only demonstrations. Results produced with the mock backend or synthetic data must not be reported as cryptographic, security, latency, or real-world detection evidence.
+This repository distinguishes genuine encrypted experiments from software-only demonstrations.
 
 ## Experimental Modes
 
@@ -21,15 +21,6 @@ Paper experiment mode is intended for the experiments reported in the manuscript
 
 The experiment stops when required datasets, timestamps, cryptographic dependencies, or expert labels are unavailable. It does not silently substitute synthetic data or fixed manuscript values.
 
-### 2. Smoke-test mode
-
-Smoke-test mode validates package integration and data flow. It uses:
-
-- an explicitly non-cryptographic mock backend
-- synthetic data generated from a shared latent-risk process
-- lightweight local feature representations
-
-Smoke-test output is for software testing only. It cannot validate BFV security, ciphertext noise, homomorphic latency, communication overhead, or phishing-detection performance on real threat data.
 
 ## Implemented Components
 
@@ -296,17 +287,6 @@ Each paper-mode run stores:
 
 These files should be archived together with the corresponding manuscript results.
 
-## Explicit Limitations
-
-The current repository does not implement:
-
-- searchable encryption
-- attribute-based encryption
-- multi-key fully homomorphic aggregation
-- encrypted E-HVSS computation
-- encrypted CNN, Transformer, random-forest, or federated-learning baselines
-
-These functions must not be presented as experimentally validated components of this release. They may be discussed only as architectural extensions or future work unless separate implementations and reproducible evidence are provided.
 
 ## Security Notice
 
